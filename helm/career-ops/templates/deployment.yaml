@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: career-ops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: career-ops
+  template:
+    metadata:
+      labels:
+        app: career-ops
+    spec:
+      containers:
+      - name: career-ops
+        image: ravibhadarge/career-ops:latest
+        ports:
+        - containerPort: 3000
